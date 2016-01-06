@@ -173,7 +173,8 @@
     ;; /update/5 | name=new-name
     ;; /update/5 | {"name": "new-name"}
     ;; /update   | [{"name": "new-name", "id": 5} {"name": "other", "id": 6}]
-    (let [data (req/extract-merged-body-params request url-params)
+    (let [data (:body-params request)
+          ;; data (req/extract-merged-body-params request url-params)
           transformed-params (p/resource->db ctx
                                              (req/extract-merged-query-params request url-params)
                                              :key-rename-map name-transforms
