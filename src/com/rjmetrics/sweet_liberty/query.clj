@@ -1,4 +1,5 @@
 (ns com.rjmetrics.sweet-liberty.query
+  (:refer-clojure :exclude [update])
   (:require [honeysql.core :as sql]
             [honeysql.helpers :refer :all]
             [com.rjmetrics.sweet-liberty.util :as util]
